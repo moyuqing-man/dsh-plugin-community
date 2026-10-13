@@ -1,0 +1,125 @@
+title: "[求助] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 怎么问才有人答
+
+        1. **标题写具体**：「装了之后 DSH 起不来」比「救命」好一百倍。
+        2. **版本一定要写**。一半以上的问题就是版本不对。
+        3. **日志贴关键几行**，不要贴整个文件。
+        4. **有人帮你解决了，请回来标答案** —— 这是这里最有价值的一个动作。
+
+        ---
+
+        ### How to ask so that someone answers
+
+        1. **Write a specific title**: "DSH will not start after I installed it" beats "help" a hundred times over.
+        2. **Always write the versions**. More than half of all problems are the wrong version.
+        3. **Paste the few log lines that matter**, not the whole file.
+        4. **If someone solved it for you, come back and mark the answer** — that is the most valuable thing you can do here.
+
+  - type: input
+    id: plugin
+    attributes:
+      label: 涉及哪个插件（和版本） / Which plugin is involved (and which version)
+      description: 不是插件的问题就写「与插件无关」 / If it is not about a plugin, write "not plugin-related"
+      placeholder: "dsh-xxx v1.2.0 / e.g. dsh-xxx v1.2.0"
+    validations:
+      required: true
+
+  - type: input
+    id: dsh-version
+    attributes:
+      label: DSH 版本 / DSH version
+      placeholder: "例如：v0.2.x / e.g. v0.2.x"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 运行环境 / Platform
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Android
+        - 其他 / 不确定 / Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node 版本 / Node version
+      description: 终端里执行 `node -v` / Run `node -v` in a terminal
+      placeholder: "例如：v24.21.0 / e.g. v24.21.0"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述 / Problem description
+      description: |
+        按这三段写，缺一段都会让回答变慢：
+        1. 我想做什么
+        2. 我做了什么（确切步骤/命令）
+        3. 结果是什么（报错原文）
+
+        ---
+
+        Write these three parts; leaving one out slows the answer down:
+        1. What I wanted to do
+        2. What I did (exact steps / commands)
+        3. What the result was (the error, verbatim)
+      value: |
+        我想做：
+
+        我做了：
+
+        结果是：
+
+        ---
+
+        What I wanted to do:
+
+        What I did:
+
+        What the result was:
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: 你已经试过什么 / What you have already tried
+      description: 写下来能避免大家重复走同一条死路。 / Writing it down keeps everyone from walking the same dead end.
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志 / 截图 / Logs / screenshots
+      description: |
+        把文件直接拖进这个框就能上传。
+        日志请**精简到关键那几行**，前面一堆没关系的可以删掉。
+
+        ---
+
+        Drag files straight into this box to upload them.
+        Trim the logs **down to the few lines that matter**; the pile of irrelevant lines above can go.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 提交前确认 / Before you submit
+      options:
+        - label: 我搜过社区里的帖子和 GitHub 上的 Issue，没有现成答案 / I searched the community posts and GitHub issues; there is no existing answer
+          required: true
+        - label: 我贴出来的内容里没有 API Key、token 或任何凭据 / What I posted contains no API key, token, or other credentials
+          required: true

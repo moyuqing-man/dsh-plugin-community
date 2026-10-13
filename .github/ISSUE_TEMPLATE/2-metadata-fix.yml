@@ -1,0 +1,74 @@
+name: 🔧 插件资料纠错 / Plugin metadata correction
+description: 某个插件的索引信息写错了、链接失效、或插件已经停止维护 / A plugin's index entry is wrong, a link is dead, or the plugin is no longer maintained
+title: "[元数据] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这个表单用来修**关于插件的描述**，不是修插件本身。
+
+        例如：仓库地址变了、作者换了、插件已归档、支持的环境写错了。
+
+        ---
+
+        This form is for fixing **the description of a plugin**, not the plugin itself.
+
+        For example: the repo moved, the author changed, the plugin was archived, the supported platforms are listed wrong.
+
+  - type: input
+    id: plugin
+    attributes:
+      label: 哪个插件 / Which plugin
+      placeholder: "插件名，或社区里那条讨论 / 索引条目的链接 / Plugin name, or a link to that discussion or index entry"
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: 错误出现在哪里 / Where the mistake shows up
+      description: 贴链接。是本仓库的某个文件，还是某条讨论？ / Paste a link. Is it a file in this repo, or a discussion?
+      placeholder: "https://github.com/moyuqing-man/dsh-plugin-community/..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 是什么问题 / What kind of problem
+      multiple: true
+      options:
+        - 仓库地址失效或已迁移 / Repo URL is dead or has moved
+        - 插件已停止维护 / 已归档 / Plugin is unmaintained / archived
+        - 支持的环境写错了（例如实际不支持 Android） / Supported platforms are wrong (e.g. it does not actually work on Android)
+        - 说明文字不准确或过时 / The description is inaccurate or outdated
+        - 重复条目 / Duplicate entry
+        - 其他 / Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: 正确的内容应该是什么 / What the correct content should be
+      description: 直接给出改后的文本最省事。 / Just give the corrected text; that is the least work for everyone.
+    validations:
+      required: true
+
+  - type: input
+    id: evidence
+    attributes:
+      label: 依据链接（可选但强烈建议） / Supporting link (optional but strongly recommended)
+      description: 例如新的仓库地址、作者的归档说明。 / For example the new repo URL, or the author's archive notice.
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 提交前确认 / Before you submit
+      options:
+        - label: 我是这个插件的作者，或我能提供公开可查的依据 / I am the author of this plugin, or I can point to publicly verifiable evidence
+          required: true

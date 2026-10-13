@@ -1,0 +1,7 @@
+# 文本文件在 Git 中统一存成 LF，避免 Windows 上克隆下来出现整文件 diff。
+# GitHub 渲染 .yml 表单时对换行不敏感，但 diff 噪音对维护者是真的。
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary

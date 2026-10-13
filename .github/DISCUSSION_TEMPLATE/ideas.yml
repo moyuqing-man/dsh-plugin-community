@@ -1,0 +1,93 @@
+title: "[想法] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 先说问题，别先说方案
+
+        一个好需求是这样写的：**「我在做 X 的时候，每次都要手动 Y，很烦。」**
+
+        而不是：「希望有个插件能一键 Y。」
+
+        原因很实际：**同样一个痛点，实现方式可能有好几种**，
+        你一上来就锁死方案，等于替别人做了技术选型。
+        先把「哪里难受」讲清楚，方案让写代码的人来提。
+
+        发在这里的需求**不代表有人会做**。但它至少留了个记录——
+        将来有人写这个插件时，能搜到这里。
+
+        ---
+
+        ### Lead with the problem, not the solution
+
+        A good request reads like this: **"When I am doing X, I have to do Y by hand every time, and it is annoying."**
+
+        Not: "I want a plugin that does Y in one click."
+
+        The reason is practical: **the same pain point can be implemented several different ways**,
+        and locking the solution in up front means you made the technical choice for someone else.
+        Explain what hurts first; let the person writing the code propose the solution.
+
+        A request posted here **does not mean anyone will build it**. But it leaves a record —
+        when someone writes that plugin later, they can find this.
+
+  - type: textarea
+    id: pain
+    attributes:
+      label: 你遇到了什么麻烦 / What is the trouble you hit
+      description: |
+        具体场景 + 频率 + 现在是怎么绕过去的。
+        「每天都要手动做一次」比「不太方便」有说服力得多。
+
+        ---
+
+        The concrete scenario + how often + how you work around it today.
+        "I have to do it by hand once a day" is far more convincing than "it is a bit inconvenient".
+    validations:
+      required: true
+
+  - type: textarea
+    id: today
+    attributes:
+      label: 现在我是怎么解决的 / How I solve it today
+      description: 手动做？用别的工具？写脚本？如果现在完全没法做，就说没法做。 / Do it by hand? Use another tool? Write a script? If there is no way to do it right now, just say so.
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired
+    attributes:
+      label: 你希望它怎么工作（可选） / How you would like it to work (optional)
+      description: 有想法就说，但请标清楚哪些是必须的、哪些只是你的偏好。 / If you have ideas, share them — but mark clearly which parts are required and which are just your preference.
+    validations:
+      required: false
+
+  - type: input
+    id: existing
+    attributes:
+      label: 你知道有插件已经做了类似的事吗？（可选） / Do you know of a plugin that already does something similar? (optional)
+      description: 如果已经有人做了，这个帖子可以变成「怎么用它」的讨论。 / If someone already built one, this thread can turn into a discussion of how to use it.
+      placeholder: "插件名或仓库地址 / Plugin name or repo URL"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: 如果没人做，你会自己写吗 / If nobody builds it, will you write it yourself
+      description: 老实填。填「不会」完全不丢人，填「会」会有人来帮你。 / Answer honestly. Writing "no" is not embarrassing at all; writing "yes" gets you help.
+      options:
+        - 会，我已经知道大概怎么写了 / Yes, I roughly know how to write it
+        - 会，但我需要有人带一下 / Yes, but I need someone to walk me through it
+        - 不会，我只是提出需求 / No, I am just requesting it
+        - 不确定 / Not sure
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 提交前确认 / Before you submit
+      options:
+        - label: 我搜过社区和 npm，没有现成的插件解决这个问题 / I searched the community and npm; there is no existing plugin that solves this
+          required: true

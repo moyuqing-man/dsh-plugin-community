@@ -1,0 +1,74 @@
+name: 💬 社区建议与问题 / Community feedback and issues
+description: 对社区本身的建议——分类、规则、索引方式、流程 / Suggestions about the community itself — categories, rules, indexing, process
+title: "[社区] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这个表单管的是**社区自己**：分类划得对不对、规则合不合理、流程顺不顺。
+
+        如果你是想问插件怎么用，那不走 Issue——去 [🙋 求助](https://github.com/moyuqing-man/dsh-plugin-community/discussions/categories/ask-for-help)。
+
+        ---
+
+        This form is about **the community itself**: are the categories right, are the rules fair, is the process smooth.
+
+        If you want to ask how to use a plugin, that is not an issue — go to [🙋 Ask for help](https://github.com/moyuqing-man/dsh-plugin-community/discussions/categories/ask-for-help).
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 哪方面的问题 / What area
+      options:
+        - 讨论分类的设置（分类太少/太多/划分不合理） / Discussion category setup (too few / too many / badly split)
+        - 社区规则或行为准则 / Community rules or code of conduct
+        - 发帖流程或 Issue 表单 / The posting flow or the issue forms
+        - 插件信息怎么组织 / 怎么被找到 / How plugin info is organized / how people find it
+        - 仓库本身的配置（标签、模板、置顶） / The repo's own configuration (labels, templates, pinned items)
+        - 其他 / Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: 现在是什么样，哪里让你觉得不对劲 / What it looks like now, and what feels off
+      description: 说具体一点。「感觉不太行」这种没法处理。 / Be specific. "It feels off" is not something anyone can act on.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你建议改成什么样 / What you suggest instead
+      description: 有具体改法最好；没有具体改法但指出了问题，也照样有价值。 / A concrete fix is best; pointing at the problem without one still has value.
+    validations:
+      required: true
+
+  - type: input
+    id: example
+    attributes:
+      label: 参考例子（可选） / Reference example (optional)
+      description: 别的社区/仓库是怎么做的？贴链接。 / How do other communities or repos do it? Paste a link.
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: tradeoff
+    attributes:
+      label: 你觉得这个改动有什么代价（可选） / What do you think this change costs (optional)
+      description: 知道自己方案的代价，比只说好处可信得多。 / Knowing the cost of your own proposal is far more credible than listing only the benefits.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 提交前确认 / Before you submit
+      options:
+        - label: 我搜过现有 Issue，没有重复的建议 / I searched existing issues; this is not a duplicate suggestion
+          required: true
+        - label: 我这不是在报告某个插件的 bug（那应该去插件自己的仓库） / This is not a bug report for a plugin (that belongs in the plugin's own repo)
+          required: true

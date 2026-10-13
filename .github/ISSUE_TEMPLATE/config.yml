@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🙋 插件用不明白 / 求帮助 / Ask for help with a plugin
+    url: https://github.com/moyuqing-man/dsh-plugin-community/discussions/categories/ask-for-help
+    about: 使用类问题请走 Discussions。发在 Issue 里没人回答，还会淹没真正的 bug。 / Usage questions belong in Discussions. Filed as an issue they go unanswered and drown out the real bugs.
+  - name: 🧩 推荐你自己做的插件 / Showcase a plugin you built
+    url: https://github.com/moyuqing-man/dsh-plugin-community/discussions/categories/plugin-showcase
+    about: 自荐插件不需要开 Issue，直接发帖就行，不需要任何人批准。 / Self-promoting a plugin needs no issue — just post it; nobody has to approve anything.
+  - name: 💡 想要一个还不存在的插件 / Want a plugin that does not exist yet
+    url: https://github.com/moyuqing-man/dsh-plugin-community/discussions/categories/ideas
+    about: 提需求请走 Discussions，这样作者能看到、能认领。 / Post requests in Discussions so authors can see them and claim them.
+  - name: 🐞 某个插件崩了 / 报错 / A plugin crashes or errors out
+    url: https://github.com/moyuqing-man/dsh-plugin-community/issues/new?template=1-plugin-bug.yml
+    about: 优先去插件自己的仓库开 Issue；找不到仓库或没人管时，用这个表单。 / Open an issue in the plugin's own repo first; use this form only when you cannot find the repo or nobody is maintaining it.
+  - name: 🔒 报告安全风险 / Report a security risk
+    url: https://github.com/moyuqing-man/dsh-plugin-community/security/policy
+    about: 安全问题请勿公开讨论细节，按 SECURITY.md 的流程走。 / Do not discuss the details of a security issue in public; follow the process in SECURITY.md.

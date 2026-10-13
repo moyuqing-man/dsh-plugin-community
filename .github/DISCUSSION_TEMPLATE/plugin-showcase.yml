@@ -1,0 +1,112 @@
+title: "[插件] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 发帖前请先确认
+
+        - 仓库是**公开**的。私有仓库别人装不了，帖子会被关掉。
+        - 如果你是替别人发，请确认**作者同意**。
+        - 不要在这里贴 API Key、token、私钥。贴了请立刻去吊销。
+
+        > 自荐不需要任何人批准。发出来就是被收录。
+
+        ---
+
+        ### Before you post
+
+        - The repo is **public**. Nobody can install from a private repo, and the post gets closed.
+        - If you are posting on someone else's behalf, make sure **the author agreed**.
+        - Do not paste API keys, tokens, or private keys here. If you did, go revoke them right now.
+
+        > Self-promotion needs no approval. Posting it is what gets it listed.
+
+  - type: input
+    id: repo
+    attributes:
+      label: 仓库地址 / Repo URL
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: true
+
+  - type: input
+    id: install
+    attributes:
+      label: 怎么安装 / How to install
+      description: 给出确切的安装命令或步骤。别写「参考 README」——把命令抄过来。 / Give the exact install command or steps. Do not write "see the README" — copy the command over here.
+      placeholder: "dsh plugin add github:owner/repo#v1.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 它解决什么问题 / What problem does it solve
+      description: |
+        写「把 X 变成 Y」，不要写「一个强大的工具」。
+        好的例子：让我不用离开编辑器就能看插件的 star 数。
+        坏的例子：功能强大、体验优秀的插件。
+
+        ---
+
+        Write "turns X into Y", not "a powerful tool".
+        Good example: lets me check a plugin's star count without leaving the editor.
+        Bad example: a powerful plugin with an excellent experience.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: native
+    attributes:
+      label: 是否依赖原生模块（native module） / Does it depend on a native module
+      description: |
+        这条是硬要求。Android 上跑不了任何预编译的 `.node` 文件，
+        所以依赖原生模块的插件必须提前说明，别让人装完才发现。
+
+        ---
+
+        This one is a hard requirement. Android cannot run any prebuilt `.node` file,
+        so plugins with native dependencies must say so up front — do not let people find out after they install.
+      options:
+        - 纯 JS，零原生依赖（理论上能在 Android 上运行） / Pure JS, zero native dependencies (should run on Android in theory)
+        - 依赖原生模块（不支持 Android） / Depends on a native module (no Android support)
+        - 不确定 / Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: 支持的环境 / Supported environments
+      description: DSH 版本范围 + Node 版本要求 / DSH version range + Node version requirement
+      placeholder: "DSH v0.2.x，Node >= 22 / DSH v0.2.x, Node >= 22"
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: 许可证 / License
+      placeholder: "MIT / Apache-2.0 / 未声明 / MIT / Apache-2.0 / not declared"
+    validations:
+      required: true
+
+  - type: textarea
+    id: demo
+    attributes:
+      label: 截图 / 演示（可选） / Screenshots / demo (optional)
+      description: 直接把图片拖进这个框就能上传。 / Drag images straight into this box to upload them.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认 / Confirmation
+      options:
+        - label: 仓库是公开可访问的 / The repo is publicly accessible
+          required: true
+        - label: 我是作者，或已获得作者同意在此展示 / I am the author, or I have the author's permission to show it here
+          required: true
+        - label: 帖子里没有 API Key、token 或任何凭据 / This post contains no API key, token, or other credentials
+          required: true

@@ -1,0 +1,8 @@
+# 社区仓库只放文档与 GitHub 表单模板，没有任何可执行代码。
+# 见 SECURITY.md —— 这是本仓库明确对外的承诺，所以不要往这里放源码。
+
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

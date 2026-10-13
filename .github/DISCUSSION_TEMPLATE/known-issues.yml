@@ -1,0 +1,89 @@
+title: "[已知问题] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 这个分类是干什么的
+
+        用来**记录已经确认、但一时半会修不掉的问题**，以及**绕过它的办法**。
+
+        和「🐞 插件 Bug 汇报」的区别：
+
+        - **报 bug** → 去插件自己的仓库开 Issue（这里只在你找不到仓库时才用）
+        - **记已知问题** → 发在这里。目的是让**下一个踩坑的人搜得到**
+
+        一条好的已知问题帖，价值不在「报告」，而在**省下后来者的时间**。
+
+        ---
+
+        ### What this category is for
+
+        For **recording confirmed problems that will not be fixed any time soon**, and **the ways around them**.
+
+        How it differs from "🐞 Plugin bug report":
+
+        - **Reporting a bug** → open an issue in the plugin's own repo (use this one only when you cannot find the repo)
+        - **Recording a known issue** → post it here. The point is so that **the next person to hit it can find it**
+
+        The value of a good known-issue post is not the "report" — it is **the time it saves whoever comes next**.
+
+  - type: input
+    id: plugin
+    attributes:
+      label: 哪个插件 / Which plugin
+      placeholder: "dsh-xxx"
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: 受影响的版本 / Affected versions
+      description: 尽量写区间，而不是单个版本 / Give a range rather than a single version
+      placeholder: "v1.2.0 ~ v1.4.1；v1.5.0 已修 / v1.2.0 ~ v1.4.1; fixed in v1.5.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 会看到什么现象 / What you will see
+      description: 报错原文、界面表现、什么时候触发。**写得越像别人搜索时会用的词，越有用。** / The error verbatim, what the UI does, when it triggers. **The more it reads like the words someone would type into a search box, the more useful it is.**
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: 怎么绕过 / How to work around it
+      description: |
+        这才是本帖的重点。给确切步骤。
+        如果确实绕不过去，直接写「目前无法绕过」，别硬编一个。
+
+        ---
+
+        This is the heart of the post. Give exact steps.
+        If there is genuinely no way around it, write "no workaround at the moment" — do not invent one.
+    validations:
+      required: true
+
+  - type: input
+    id: upstream
+    attributes:
+      label: 上游 Issue / 讨论链接（可选） / Upstream issue / discussion link (optional)
+      description: 有的话贴上来，别人可以去跟进进度。 / If there is one, paste it so others can follow the progress.
+      placeholder: "https://github.com/owner/repo/issues/123"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 提交前确认 / Before you submit
+      options:
+        - label: 我亲自遇到过这个现象，不是转述别人的 / I hit this myself; it is not second-hand
+          required: true
+        - label: 我搜过，社区里没有重复的帖子 / I searched, and there is no duplicate post in the community
+          required: true
+        - label: 帖子里没有 API Key、token 或任何凭据 / This post contains no API key, token, or other credentials
+          required: true

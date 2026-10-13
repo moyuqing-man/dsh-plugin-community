@@ -1,0 +1,140 @@
+name: 🐞 插件 Bug 汇报 / Plugin bug report
+description: 某个插件崩溃、报错、或行为不对（优先去插件自己的仓库；找不到才在这里发） / A plugin crashes, errors out, or misbehaves (go to the plugin's own repo first; only post here if you cannot find it)
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **先确认一件事**：如果这个插件有自己的仓库，请**优先去那边开 Issue**——作者能直接收到通知，修得更快。
+
+        只有在下面这几种情况下才在这里发：
+        - 找不到这个插件的仓库
+        - 插件的 Issue 被关掉了
+        - 在插件仓库提了但一直没人理
+
+        如果只是想**问怎么用**，那不走 Issue，去 [🙋 求助](https://github.com/moyuqing-man/dsh-plugin-community/discussions/categories/ask-for-help)。
+
+        ---
+
+        **Check one thing first**: if this plugin has its own repo, **open an issue there instead** — the author gets notified directly and can fix it faster.
+
+        Only post here if:
+        - You cannot find the plugin's repo
+        - The plugin's issues are closed
+        - You filed an issue in the plugin's repo and nobody ever got back to you
+
+        If you just want to **ask how to use it**, that is not an issue — go to [🙋 Ask for help](https://github.com/moyuqing-man/dsh-plugin-community/discussions/categories/ask-for-help).
+
+  - type: input
+    id: plugin
+    attributes:
+      label: 插件名与版本 / Plugin name and version
+      placeholder: "例如：dsh-xxx v1.2.0 / e.g. dsh-xxx v1.2.0"
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-repo
+    attributes:
+      label: 插件的仓库地址（如果知道） / The plugin's repo URL (if you know it)
+      description: 填了的话，维护者可以帮你把问题转过去 / If you fill this in, the maintainers can forward the problem for you
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: false
+
+  - type: input
+    id: dsh-version
+    attributes:
+      label: DSH 版本 / DSH version
+      placeholder: "例如：v0.2.x / e.g. v0.2.x"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 运行环境 / Platform
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Android
+        - 其他 / 不确定 / Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node 版本 / Node version
+      description: 终端里执行 `node -v` 的结果 / The output of `node -v` in a terminal
+      placeholder: "例如：v24.21.0 / e.g. v24.21.0"
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+      description: 越具体越好。能稳定复现的问题才会被修。 / The more specific the better. Only problems that reproduce reliably get fixed.
+      value: |
+        1.
+        2.
+        3.
+
+        ---
+
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你期望发生什么 / What you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际发生了什么 / What actually happened
+      description: 有报错信息请贴原文，不要只描述。 / Paste error messages verbatim; do not just describe them.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: 你已经试过什么 / What you have already tried
+      description: 重装、换版本、看日志……写下来能避免大家重复走同一条死路。 / Reinstalling, switching versions, reading the logs… writing it down keeps everyone from walking the same dead end.
+    validations:
+      required: false
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: 日志 / 截图（可选） / Logs / screenshots (optional)
+      description: |
+        把文件直接拖进这个框就能上传。
+        日志请精简到**关键那几行**，不要贴整个文件。
+
+        ---
+
+        Drag files straight into this box to upload them.
+        Trim the logs down to **the few lines that matter**; do not paste the whole file.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 提交前确认 / Before you submit
+      options:
+        - label: 我搜过现有的 Issue 和 Discussions，没有重复 / I searched existing issues and discussions; this is not a duplicate
+          required: true
+        - label: 这不是安全问题（安全问题请走 SECURITY.md，不要在这里公开细节） / This is not a security issue (for security issues follow SECURITY.md; do not post details in public here)
+          required: true

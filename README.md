@@ -129,6 +129,10 @@ DSH already has more than one plugin marketplace, and they are good. **This comm
 
 If you maintain a marketplace or index, come say hello in [General](https://github.com/moyuqing-man/dsh-plugin-community/discussions/categories/general) — **we would rather cooperate than compete.**
 
+### Licence
+
+The repository itself (README, contribution guide, issue and discussion forms) is [MIT](LICENSE), © 2026 moyuqing-man. **It contains no executable code** — see [SECURITY.md](SECURITY.md) — and every plugin discussed here carries its own author's licence.
+
 ---
 
 *Discussions in this repository carry the community content; each plugin's code and licence are its own author's responsibility.*
